@@ -7,14 +7,12 @@ struct SandwichDetail: View {
     var body: some View {
         VStack {
             Spacer(minLength: 0)
+
             Image(sandwich.thumbnailName)
                 .resizable()
                 .aspectRatio(contentMode: zoomed ? .fill : .fit)
-                .onTapGesture {
-                    withAnimation {
-                        zoomed.toggle()
-                    }
-                }
+                .onTapGesture { withAnimation { zoomed.toggle() } }
+
             Spacer(minLength: 0)
 
             if sandwich.isSpicy && !zoomed {
@@ -23,7 +21,7 @@ struct SandwichDetail: View {
                     Label("Spicy", systemImage: "flame.fill")
                     Spacer()
                 }
-                .padding(.all)
+                .padding()
                 .font(.headline.smallCaps())
                 .background(Color.red)
                 .foregroundStyle(Color.yellow)
@@ -31,18 +29,18 @@ struct SandwichDetail: View {
             }
         }
         .navigationTitle(sandwich.name)
-        .edgesIgnoringSafeArea(.bottom)
+        .ignoresSafeArea(edges: .bottom)
     }
 }
 
 #Preview {
-    NavigationView {
+    NavigationStack {
         SandwichDetail(sandwich: .constant(testData[0]))
     }
 }
 
-#Preview {
-    NavigationView {
+#Preview("Spicy example") {
+    NavigationStack {
         SandwichDetail(sandwich: .constant(testData[1]))
     }
 }
