@@ -1,0 +1,45 @@
+# macOS
+.DS_Store
+.AppleDouble
+.Icon?
+.LSOverride
+
+# Xcode user state (do NOT commit)
+**/*.xcuserstate
+**/*.xcuserdatad/
+*.xcodeproj/xcuserdata/
+*.xcworkspace/xcuserdata/
+*.xcodeproj/project.xcworkspace/xcuserdata/
+
+# Xcode build products
+DerivedData/
+build/
+
+# Swift Package Manager
+.build/
+.swiftpm/
+# Keep dependency lockfile committed
+!**/Package.resolved
+
+# Playgrounds
+timeline.xctimeline
+playground.xcworkspace
+
+# CocoaPods (if added later)
+Pods/
+Podfile.lock
+
+# Carthage (if added later)
+Carthage/
+Carthage/Build/
+
+# Fastlane (if added later)
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots/
+fastlane/test_output/
+
+# Misc editors
+*.swp
+*.swo
+*.orig
